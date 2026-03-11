@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | The Mule Bar and Grill</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f1c40f; 
+            --gold-gradient: linear-gradient(135deg, #f1c40f 0%, #d4ac0d 100%);
+            --dark-bg: #0f0f0f;
+            --surface: #161616;
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-muted: #a0a0a0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: #fff;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+
+        /*NAVIGATION BAR */
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background: rgba(15, 15, 15, 0.98);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 84%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .logo { font-family: 'Oswald', sans-serif; font-size: 1.6rem; letter-spacing: 3px; color: var(--primary); text-transform: uppercase; line-height: 1; }
+
+
+        /* Floating Navigation */
+        .back-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: var(--gold-gradient);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+        .back-home:hover { transform: scale(1.05); }
+
+        /* Menu Header */
+        .menu-header {
+            height: 40vh;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), 
+                        url('https://images.unsplash.com/photo-1550966841-3ee7adac1af3?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .menu-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            margin: 0;
+            color: #fff;
+        }
+
+        /* Menu Layout */
+        .menu-container {
+            max-width: 1200px;
+            margin: -50px auto 50px auto;
+            background: var(--surface);
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            border: 1px solid var(--glass-border);
+            position: relative;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+        }
+
+        .category-block { margin-bottom: 40px; }
+
+        .category-title {
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-item { margin-bottom: 25px; position: relative; }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .item-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .item-dots {
+            flex-grow: 1;
+            border-bottom: 1px dotted #444;
+        }
+
+        .item-price {
+            color: var(--primary);
+            font-family: 'Oswald', sans-serif;
+            font-weight: bold;
+        }
+
+        .item-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 5px 0 0 0;
+            font-style: italic;
+        }
+
+        .special-badge {
+            font-size: 0.6rem;
+            background: var(--primary);
+            color: #000;
+            padding: 2px 6px;
+            border-radius: 3px;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #080808;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .menu-header h1 { font-size: 3rem; }
+            .menu-container { margin: 0; border-radius: 0; padding: 30px 20px; }
+            .menu-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <A href="home.html" style="text-decoration: none;"><div class="logo">The Mule</div>
+            <div style="color: var(--primary); font-family: 'Oswald'; font-size: 0.7rem; letter-spacing: 1px;">BAR AND GRILL</div></A>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reservations">Reservations</a></li>
+        </ul>
+    </nav>
+
+    <header class="menu-header">
+        <p style="letter-spacing: 5px; color: var(--primary); font-family: 'Oswald';">THE MULE BAR & GRILL</p>
+        <h1>Full Menu</h1>
+    </header>
+
+    <main class="menu-container">
+        <div class="menu-grid">
+            
+            <div class="category-block">
+                <h3 class="category-title">Burgers</h3>
+                <p style="font-size: 0.7rem; margin-top:-20px; margin-bottom: 20px;">Includes Choice of Potato, or Rice, and Coleslaw Made with Fresh Atlantic, Grass-Fed Beef 
+                </p>
+               
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-mane">THE BIG SUSSEX</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">$19</span>
+                    </div>
+                    <p class="item-desc">Two 1/4 lb. Beef Patties, Bacon, Cheddar Cheese, Pulled Pork, Onion Rings, Deep Fried Pickles, Lettuce, Tomato and Topped with Guiness BBQ Sauce</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-mane">WAGON WHEEL BURGER</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">$14</span>
+                    </div>
+                    <p class="item-desc">1/4lb Beef Patty w/ lettuce, tomato, and pickles</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-mane">LOTZA MOZZA BURGER</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">$15</span>
+                    </div>
+                    <p class="item-desc">1/4 lb. Beef Patty covered in Mozzarella Cheese, Sautéed Mushrooms, Lettuce, Tomato, Onion and Pickles</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-mane">BARNYARD BUSTER</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">$14</span>
+                    </div>
+                    <p class="item-desc">Breaded Chicken Burger Topped with Mozzarella Cheese, Marinara Sauce, Lettuce and Tomato</p>
+                </div>
+
+            </div>
+
+            <div class="category-block">
+                <h3 class="category-title">PASTA</h3>
+                 <p style="font-size: 0.7rem; margin-top:-20px; margin-bottom: 20px;">Includes Choice of Potato, or Rice, and Coleslaw Made with Fresh Atlantic, Grass-Fed Beef </p>
+
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="e">SPAGHETTI & MEATBALLS</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">$14</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-mane">CHICKEN FETTUCINI ALFREDO</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">$16</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-mane">CHICKEN PARMIGIANA</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">$16</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="category-block">
+                <h3 class="category-title">SEAFOOD</h3>
+                <p style="font-size: 0.7rem; margin-top:-20px; margin-bottom: 20px;">Choice of Potato or Rice, Fresh Roll and Coleslaw
+                </p>
+               
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-mane">The Works / All Meat</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">$19</span>
+                    </div>
+                    <p class="item-desc">12" Large. 9" ($13) | 6" ($10)</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-mane">Donair / Hawaiian</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">$17</span>
+                    </div>
+                    <p class="item-desc">12" Large. 9" ($12) | 6" ($9)</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-mane">Garlic Cheese Fingers</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">$14</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-block">
+                <h3 class="category-title">Tex-Mex & Quebec</h3>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-mane">Beef or BBQ Chicken Nacho</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">$18</span>
+                    </div>
+                    <p class="item-desc">Large. Small portion available for $14</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-mane">Poutine Québécoise</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">$12</span>
+                    </div>
+                    <p class="item-desc">Add Bacon, Chicken, Pulled Pork or Hamburg for $3</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-mane">Sizzling Chicken Fajitas</span>
+                        <div class="item-dots"></div>
+                        <span class="item-price">$16</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 The Mule Bar and Grill | Sussex, New Brunswick</p>
+        <p>Taxes extra. Prices subject to change.</p>
+    </footer>
+
+</body>
+</html>

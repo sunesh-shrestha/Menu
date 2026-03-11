@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mule Bar and Grill | Sussex, NB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f1c40f; 
+            --gold-gradient: linear-gradient(135deg, #f1c40f 0%, #d4ac0d 100%);
+            --dark-bg: #0f0f0f;
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-muted: #a0a0a0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: #fff;
+            margin: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* --- NAVIGATION UPDATED --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background: rgba(15, 15, 15, 0.98);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 84%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo { font-family: 'Oswald', sans-serif; font-size: 1.6rem; letter-spacing: 3px; color: var(--primary); text-transform: uppercase; line-height: 1; }
+
+        /* --- SECTIONS --- */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
+                        url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .specials-board { padding: 80px 5%; background: #111; text-align: center; }
+        .board-title { font-family: 'Oswald', sans-serif; font-size: 2.5rem; color: var(--primary); text-transform: uppercase; margin-bottom: 0; }
+        
+        .specials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            max-width: 1400px;
+            margin: 40px auto;
+        }
+
+        .special-card { background: #1a1a1a; border-radius: 8px; overflow: hidden; border: 1px solid #333; transition: 0.3s; }
+        .special-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .special-day { background: var(--primary); color: #000; font-weight: 800; padding: 10px; text-transform: uppercase; font-size: 0.8rem; }
+        .special-img { height: 100px; width: 100%; object-fit: cover; }
+        .special-info { padding: 12px; }
+        .special-info h4 { margin: 0; font-size: 0.85rem; text-transform: uppercase; min-height: 40px; }
+        .special-price { color: var(--primary); font-weight: 700; display: block; font-size: 1.1rem; }
+
+        .event {
+            background-color: #0c0c0c; 
+            padding: 100px 5%; 
+            border-top: 1px solid #222; 
+            border-bottom: 1px solid #222;
+            }
+
+        /* --- GALLERY SECTION --- */
+        .gallery-section { padding: 80px 8%; background: #0a0a0a; text-align: center; }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+        }
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid #222;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+            filter: grayscale(40%);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+        }
+
+        .booking-divider {
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+                        url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .booking-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 25px; }
+        .input-group { text-align: left; }
+        .input-group label { display: block; font-size: 0.7rem; color: var(--primary); text-transform: uppercase; margin-bottom: 5px; }
+        .input-group input, .input-group select { width: 100%; background: transparent; border: none; border-bottom: 1px solid #555; color: white; padding: 8px 0; outline: none; }
+        .book-btn { grid-column: 1 / -1; background: var(--gold-gradient); color: #000; padding: 15px; border: none; font-weight: 700; text-transform: uppercase; cursor: pointer; }
+
+        .menu-section { padding: 60px 8%; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; max-width: 1200px; margin: 0 auto; }
+        .category-title { color: var(--primary); text-transform: uppercase; letter-spacing: 2px; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 25px; font-family: 'Oswald', sans-serif; }
+        .menu-item { margin-bottom: 20px; }
+        .item-main { display: flex; justify-content: space-between; font-family: 'Oswald', sans-serif; font-size: 1rem; border-bottom: 1px dotted #444; }
+        .item-price { color: var(--primary); }
+        .item-desc { font-size: 0.8rem; color: var(--text-muted); margin: 2px 0 0 0; }
+
+        footer { background: #080808; padding: 40px; text-align: center; border-top: 1px solid #222; }
+
+        @media (max-width: 900px) { 
+            nav { width: 100%; padding: 15px 5%; box-sizing: border-box; flex-direction: column; gap: 15px; } 
+            .nav-links { gap: 15px; }
+            .hero { height: 40vh; }
+        }
+    </style>
+</head>
+<body id="home">
+
+    <nav>
+        <div class="logo-container">
+            <div class="logo">The Mule</div>
+            <div style="color: var(--primary); font-family: 'Oswald'; font-size: 0.7rem; letter-spacing: 1px;">BAR AND GRILL</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#events">EVENTS</a></li>
+            <li><a href="#reservations">Reservations</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1 style="font-family: 'Playfair Display'; font-size: 4rem; margin:0;">The Menu</h1>
+        <p style="letter-spacing: 4px; color: var(--primary);">ESTABLISHED IN SUSSEX, NB</p>
+    </section>
+
+    <section class="specials-board">
+        <h2 class="board-title">Daily Specials</h2>
+        <p style="color: var(--text-muted); font-style: italic; margin-top: 5px;">4PM - Close | Beverage Purchase Required</p>
+        <div class="specials-grid">
+            <div class="special-card"><div class="special-day">Monday</div><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=300" class="special-img"><div class="special-info"><h4>Poutine Night</h4><span class="special-price">$10</span></div></div>
+            <div class="special-card"><div class="special-day">Tuesday</div><img src="https://images.unsplash.com/photo-1633933358116-a27b902f3cd5?auto=format&fit=crop&w=300" class="special-img"><div class="special-info"><h4>Turkey Night</h4><span class="special-price">$10</span></div></div>
+            <div class="special-card"><div class="special-day">Wednesday</div><img src="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=300" class="special-img"><div class="special-info"><h4>Wing Night</h4><span class="special-price">$10</span></div></div>
+            <div class="special-card"><div class="special-day">Thursday</div><img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=300" class="special-img"><div class="special-info"><h4>Wing Night</h4><span class="special-price">$0.69/ea</span></div></div>
+            <div class="special-card"><div class="special-day">Friday</div><img src="https://images.unsplash.com/photo-1546241072-48010ad28c2c?auto=format&fit=crop&w=300" class="special-img"><div class="special-info"><h4>Steak Night</h4><span class="special-price">$6</span></div></div>
+            <div class="special-card"><div class="special-day">Saturday</div><img src="https://images.unsplash.com/photo-1544077960-604201fe74bc?auto=format&fit=crop&w=300" class="special-img"><div class="special-info"><h4>Rib Night</h4><span class="special-price">$8</span></div></div>
+            <div class="special-card"><div class="special-day">Sunday</div><img src="https://images.unsplash.com/photo-1532597311687-5c2dc87ffa51?auto=format&fit=crop&w=300" class="special-img"><div class="special-info"><h4>Turkey Dinner</h4><span class="special-price">$14</span></div></div>
+        </div>
+    </section>
+
+    
+<div class="event">
+ <section id="events">
+    
+    <div style="
+        max-width: 1000px; 
+        margin: 0 auto; 
+        background: #111; 
+        border: 1px solid #333; 
+        display: flex; 
+        flex-wrap: wrap; 
+        overflow: hidden; 
+        border-radius: 4px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        
+        <div style="
+            background: #ff0000; 
+            color: #fff; 
+            padding: 40px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;
+            min-width: 150px;
+            font-family: 'Oswald', sans-serif;">
+            <span style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px;">Jan</span>
+            <span style="font-size: 3.5rem; font-weight: 800; line-height: 1;">24</span>
+            <span style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">FRIDAY</span>
+        </div>
+
+        <div style="padding: 50px; flex: 1; text-align: left;">
+            <h2 style="
+                color: #ff0000; 
+                font-family: 'Oswald', sans-serif; 
+                font-size: 2.8rem; 
+                font-weight: 700; 
+                text-transform: uppercase; 
+                margin: 0 0 10px 0;
+                line-height: 1;">
+                Upcoming Events!
+            </h2>
+            
+            <h3 style="
+                font-family: 'Oswald', sans-serif; 
+                color: #f1c40f; 
+                font-size: 1.4rem; 
+                margin-bottom: 25px; 
+                letter-spacing: 1px;">
+                HODDER & COFFIN <span style="color: #fff; margin-left: 10px; font-size: 1rem;">| $10 AT THE DOOR</span>
+            </h3>
+
+            <p style="
+                color: #a0a0a0; 
+                font-family: 'Poppins', sans-serif; 
+                line-height: 1.8; 
+                font-size: 1rem; 
+                margin: 0;
+                font-weight: 300;">
+                Hodder & Coffin are a Nova Scotia–based hip-hop duo who turn every show into a true East Coast kitchen party. 
+                Their live performances are fully interactive, pulling the crowd in with everything from teaching Sociables—a 
+                classic Maritime drinking game—to sharing real stories inspired by growing up out East. 
+            </p>
+
+            <div style="margin-top: 30px; display: flex; gap: 20px; align-items: center;">
+                <span style="font-family: 'Oswald', sans-serif; font-size: 0.8rem; color: #fff; text-transform: uppercase; letter-spacing: 2px;">
+                    <i class="fas fa-clock" style="color: #ff0000; margin-right: 8px;"></i> Show starts at 9:00 PM
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+
+<section id="reservations" style="     
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 100px 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;">
+
+    <div style="max-width: 600px; width: 100%; background: rgba(0, 0, 0, 0.7); padding: 50px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+        
+        <div style="text-align: center;">
+            <h2 style="font-family: 'Oswald', sans-serif; font-size: 2.5rem; color: #fff; text-transform: uppercase; margin-bottom: 30px; letter-spacing: 1px;">Drop us a line!</h2>
+            
+            <form style="text-align: left;">
+                <div style="margin-bottom: 30px;">
+                    <label style="display: block; font-size: 1rem; color: #fff; margin-bottom: 5px; font-family: 'Poppins', sans-serif;">Name</label>
+                    <input type="text" style="width: 100%; background: transparent; border: none; border-bottom: 2px solid #fff; color: #fff; padding: 10px 0; outline: none;">
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <label style="display: block; font-size: 1rem; color: #fff; margin-bottom: 5px; font-family: 'Poppins', sans-serif;">Email*</label>
+                    <input type="email" required style="width: 100%; background: transparent; border: none; border-bottom: 2px solid #fff; color: #fff; padding: 10px 0; outline: none;">
+                </div>
+
+                <div style="margin-bottom: 40px;">
+                    <label style="display: block; font-size: 1rem; color: #fff; margin-bottom: 5px; font-family: 'Poppins', sans-serif;">Message</label>
+                    <textarea rows="1" style="width: 100%; background: transparent; border: none; border-bottom: 2px solid #fff; color: #fff; padding: 10px 0; outline: none; resize: none;"></textarea>
+                </div>
+
+                <div style="text-align: center;">
+                    <button type="submit" style="background: #fff; color: #000; border: none; padding: 12px 60px; font-family: 'Oswald'; font-weight: 700; text-transform: uppercase; font-size: 1.1rem; cursor: pointer; transition: 0.3s;">
+                        Send
+                    </button>
+                </div>
+            </form>
+
+            <p style="font-size: 0.7rem; color: #888; margin-top: 30px; line-height: 1.4;">
+                This site is protected by reCAPTCHA and the Google 
+                <a href="#" style="color: #888; text-decoration: underline;">Privacy Policy</a> and 
+                <a href="#" style="color: #888; text-decoration: underline;">Terms of Service</a> apply.
+            </p>
+        </div>
+    </div>
+</section>
+
+    /* --- GALLERY --- */
+    <section id="gallery" class="gallery-section">
+        <h2 class="board-title">Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=500" alt="Restaurant Interior"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500" alt="Food Prep"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=500" alt="Plated Dish"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=500" alt="Bar Area"></div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>49 Winter Street, Sussex, NB | 506.433.3939</p>
+        <p style="font-size: 0.6rem; color: #444; margin-top: 20px;">"The fondest memories are made gathered around the table."</p>
+    </footer>
+
+</body>
+</html>
