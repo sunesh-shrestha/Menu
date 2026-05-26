@@ -1,36 +1,36 @@
-#  Interactive Restaurant Menu Web App
+# 🍽️ Interactive Restaurant Menu Web App
 
 A clean, responsive, and lightweight frontend web application designed to provide customers with an interactive digital menu experience. This project provides a seamless transition from a welcoming home landing page directly to an organized, readable menu page.
 
 ---
 
-##  Features
+## 🚀 Features
 
 * **Responsive Design:** Optimized for a seamless experience across desktop, tablet, and mobile screens.
-* **Modern Home Interface:** A welcoming landing page (`home.html`) that introduces the restaurant and guides users forward.
+* **Modern Home Interface:** A welcoming landing page (`home.html` or `index.html`) that introduces the restaurant and guides users forward.
 * **Structured Menu Layout:** A clean, easy-to-navigate digital menu (`menu.html`) showcasing categories, items, and pricing.
 * **Zero Dependencies:** Built entirely with pure web standards—no complex frameworks required for deployment.
 
 ---
 
-##  Project Structure
+## 📂 Project Structure
 
 ```text
-├── home.html      # The landing/welcome page of the application
+├── index.html     # The landing/welcome page of the application (formerly home.html)
 └── menu.html      # The dedicated digital menu display page
 ```
 
 ---
 
-##  Built With
+## 🛠️ Built With
 
 * **HTML5:** Semantic markup structure.
 * **CSS3:** Custom responsive styling and modern layout design.
-* **JavaScript (Optional/If applicable):** Client-side interactivity.
+* **JavaScript (Optional):** Client-side interactivity.
 
 ---
 
-##  Getting Started
+## 💻 Getting Started
 
 Follow these simple steps to get a local copy up and running on your machine.
 
@@ -50,12 +50,12 @@ You only need a modern web browser installed (such as Google Chrome, Mozilla Fir
    ```
 
 3. **Launch the application:**
-   * Double-click `home.html` to open it locally in your default web browser.
-   * Alternatively, if using **VS Code**, right-click `home.html` and select **Open with Live Server** for live-reloading.
+   * Double-click `index.html` to open it locally in your default web browser.
+   * Alternatively, you can view the live, production-ready website directly on GitHub Pages here: [Live Demo](https://github.io)
 
 ---
 
-##  Roadmap & Future Enhancements
+## 🗺️ Roadmap & Future Enhancements
 
 - [ ] Add smooth scroll animations between sections.
 - [ ] Implement a dynamic filtering system (e.g., Veg, Non-Veg, Gluten-Free).
@@ -64,7 +64,7 @@ You only need a modern web browser installed (such as Google Chrome, Mozilla Fir
 
 ---
 
-##  Contributing
+## 🤝 Contributing
 
 Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -76,12 +76,13 @@ Contributions make the open-source community an amazing place to learn, inspire,
 
 ---
 
-##  License
+## 📝 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
-##  Contact
+## ✉️ Contact
 
-**Sunesh Shrestha** - [GitHub Profile](
+**Sunesh Shrestha** - [GitHub Profile](https://github.com)  
+Project Link: [https://github.com/Menu](https://github.com/Menu)
