@@ -84,5 +84,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ##  Contact
 
-**Sunesh Shrestha** - [GitHub Profile](https://github.com)  
-Project Link: [https://github.com/Menu](https://github.com/Menu)
+**Sunesh Shrestha** - [GitHub Profile](https://github.com/sunesh-shrestha)  
+
