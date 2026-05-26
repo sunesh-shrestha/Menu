@@ -1,10 +1,10 @@
-# 🍽️ Interactive Restaurant Menu Web App
+#  Interactive Restaurant Menu Web App
 
 A clean, responsive, and lightweight frontend web application designed to provide customers with an interactive digital menu experience. This project provides a seamless transition from a welcoming home landing page directly to an organized, readable menu page.
 
 ---
 
-## 🚀 Features
+##  Features
 
 * **Responsive Design:** Optimized for a seamless experience across desktop, tablet, and mobile screens.
 * **Modern Home Interface:** A welcoming landing page (`home.html`) that introduces the restaurant and guides users forward.
@@ -13,7 +13,7 @@ A clean, responsive, and lightweight frontend web application designed to provid
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 ├── home.html      # The landing/welcome page of the application
@@ -22,7 +22,7 @@ A clean, responsive, and lightweight frontend web application designed to provid
 
 ---
 
-## 🛠️ Built With
+##  Built With
 
 * **HTML5:** Semantic markup structure.
 * **CSS3:** Custom responsive styling and modern layout design.
@@ -30,7 +30,7 @@ A clean, responsive, and lightweight frontend web application designed to provid
 
 ---
 
-## 💻 Getting Started
+##  Getting Started
 
 Follow these simple steps to get a local copy up and running on your machine.
 
@@ -55,7 +55,7 @@ You only need a modern web browser installed (such as Google Chrome, Mozilla Fir
 
 ---
 
-## 🗺️ Roadmap & Future Enhancements
+##  Roadmap & Future Enhancements
 
 - [ ] Add smooth scroll animations between sections.
 - [ ] Implement a dynamic filtering system (e.g., Veg, Non-Veg, Gluten-Free).
@@ -64,7 +64,7 @@ You only need a modern web browser installed (such as Google Chrome, Mozilla Fir
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -76,12 +76,12 @@ Contributions make the open-source community an amazing place to learn, inspire,
 
 ---
 
-## 📝 License
+##  License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
-## ✉️ Contact
+##  Contact
 
 **Sunesh Shrestha** - [GitHub Profile](
