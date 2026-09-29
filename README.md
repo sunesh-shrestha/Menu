@@ -2,6 +2,8 @@
 
 A clean, responsive, and lightweight frontend web application designed to provide customers with an interactive digital menu experience. This project provides a seamless transition from a welcoming home landing page directly to an organized, readable menu page.
 
+**Live demo:** [[Menu](https://sunesh-shrestha.github.io/Menu/)]
+
 ---
 
 ##  Features
@@ -86,5 +88,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 **Sunesh Shrestha** - [GitHub Profile](https://github.com/sunesh-shrestha)  
 **E-mail** - [suneshshrestha308@gmail.com](mailto:suneshshrestha308@gmail.com)
+**Linkdin** - [Sunesh](www.linkedin.com/in/sunesh-prasad-shrestha-346728360)
 
 
