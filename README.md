@@ -87,7 +87,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ##  Contact
 
 **Sunesh Shrestha** - [GitHub Profile](https://github.com/sunesh-shrestha)  
-**E-mail** - [suneshshrestha308@gmail.com](mailto:suneshshrestha308@gmail.com)
+**E-mail** - [suneshshrestha308@gmail.com](mailto:suneshshrestha308@gmail.com) 
+
 **Linkdin** - [Sunesh](www.linkedin.com/in/sunesh-prasad-shrestha-346728360)
 
 
